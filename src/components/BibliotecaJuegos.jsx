@@ -98,14 +98,12 @@ function BibliotecaJuegos() {
     }
 
     if (juegoEditando) {
-      // Editar juego existente
       setJuegos(juegos.map(j => 
         j.id === juegoEditando.id 
           ? { ...juegoEditando, ...formData }
           : j
       ))
     } else {
-      // Agregar nuevo juego
       const nuevoJuego = {
         id: Date.now(),
         ...formData,
@@ -142,7 +140,6 @@ function BibliotecaJuegos() {
     })
   }
 
-  // Filtrar y ordenar juegos
   let juegosFiltrados = juegos.filter(juego =>
     juego.nombre.toLowerCase().includes(busqueda.toLowerCase())
   )

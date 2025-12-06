@@ -1,4 +1,3 @@
-// server/config/mongoClient.js
 import { MongoClient, ServerApiVersion } from 'mongodb'
 
 const uri = process.env.MONGODB_URI // pon aquí tu connection string en .env
@@ -14,7 +13,6 @@ const client = new MongoClient(uri, {
 export async function connectMongo() {
   try {
     await client.connect()
-    // opcional: hace ping para verificar
     await client.db('admin').command({ ping: 1 })
     console.log('✅ MongoDB (native driver) conectado correctamente')
     return client
@@ -43,22 +41,17 @@ dotenv.config()
 
 const app = express()
 
-// Middleware
 app.use(cors())
 app.use(express.json())
 
-// Conectar BD
 connectDB()
 
-// Rutas
 app.use('/api/biblioteca', bibliotecaRoutes)
 
-// Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: '✅ Servidor funcionando' })
 })
 
-// Error handling
 app.use((err, req, res, next) => {
   console.error(err)
   res.status(500).json({ error: 'Error interno del servidor' })
