@@ -13,6 +13,7 @@ function ListaResenas({ juegos = [], onActualizarResenas = null }) {
     puntuacion: 5
   })
 
+  // Extraer todas las reseñas de todos los juegos
   const todasLasResenas = juegos.flatMap(juego =>
     (juego.comentariosIniciales || []).map(resena => ({
       ...resena,
@@ -79,6 +80,7 @@ function ListaResenas({ juegos = [], onActualizarResenas = null }) {
     }
   }
 
+  // Filtrar y ordenar reseñas
   let resenasFiltradas = todasLasResenas.filter(resena =>
     resena.juegoNombre.toLowerCase().includes(busqueda.toLowerCase()) ||
     resena.texto.toLowerCase().includes(busqueda.toLowerCase())

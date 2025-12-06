@@ -22,6 +22,7 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+// POST - Crear nueva biblioteca
 router.post('/crear', async (req, res) => {
   try {
     const { juegos, nombreBiblioteca, descripcion } = req.body
@@ -47,6 +48,7 @@ router.post('/crear', async (req, res) => {
   }
 })
 
+// PUT - Actualizar biblioteca
 router.put('/:id', async (req, res) => {
   try {
     const { juegos, nombreBiblioteca, descripcion } = req.body
@@ -72,6 +74,7 @@ router.put('/:id', async (req, res) => {
   }
 })
 
+// DELETE - Eliminar biblioteca
 router.delete('/:id', async (req, res) => {
   try {
     const biblioteca = await Biblioteca.findOneAndDelete({ bibliotecaId: req.params.id })
@@ -86,6 +89,7 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
+// POST - Agregar comentario a juego
 router.post('/:id/juego/:juegoId/comentario', async (req, res) => {
   try {
     const { texto, puntuacion, fecha, autor } = req.body
@@ -117,6 +121,7 @@ router.post('/:id/juego/:juegoId/comentario', async (req, res) => {
   }
 })
 
+// DELETE - Eliminar comentario de juego
 router.delete('/:id/juego/:juegoId/comentario/:comentarioId', async (req, res) => {
   try {
     const biblioteca = await Biblioteca.findOne({ bibliotecaId: req.params.id })

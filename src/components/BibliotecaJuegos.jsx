@@ -5,13 +5,13 @@ import EstadisticasPersonales from './EstadisticasPersonales'
 import './BibliotecaJuegos.css'
 
 function BibliotecaJuegos() {
-  const [seccionActiva, setSeccionActiva] = useState('biblioteca') // 'biblioteca', 'galeria', 'resenas', 'estadisticas'
+  const [seccionActiva, setSeccionActiva] = useState('biblioteca')
   const [juegos, setJuegos] = useState([
     {
       id: 1,
       nombre: "Elden Ring",
       imagen: "/imagenes/foto.jpg",
-      resena: 4.5,
+      resena: 3,
       tiempoJugado: 120,
       comentariosIniciales: [
         {
@@ -50,8 +50,8 @@ function BibliotecaJuegos() {
     {
       id: 5,
       nombre: "Honor of Kings",
-      imagen: "/imagenes/foto6.jpeg",
-      resena: 3,
+      imagen: "/imagenes/foto6.jpg",
+      resena: 4.3,
       tiempoJugado: 180,
       comentariosIniciales: []
     },
@@ -59,7 +59,7 @@ function BibliotecaJuegos() {
       id: 6,
       nombre: "Blood Strike",
       imagen: "/imagenes/foto4.jpg",
-      resena: 3.5,
+      resena: 4.0,
       tiempoJugado: 90,
       comentariosIniciales: []
     }
@@ -98,12 +98,14 @@ function BibliotecaJuegos() {
     }
 
     if (juegoEditando) {
+      // Editar juego existente
       setJuegos(juegos.map(j => 
         j.id === juegoEditando.id 
           ? { ...juegoEditando, ...formData }
           : j
       ))
     } else {
+      // Agregar nuevo juego
       const nuevoJuego = {
         id: Date.now(),
         ...formData,
@@ -140,6 +142,7 @@ function BibliotecaJuegos() {
     })
   }
 
+  // Filtrar y ordenar juegos
   let juegosFiltrados = juegos.filter(juego =>
     juego.nombre.toLowerCase().includes(busqueda.toLowerCase())
   )
@@ -154,7 +157,7 @@ function BibliotecaJuegos() {
 
   return (
     <div className="biblioteca-juegos">
-      {/* Navegación */}
+      {/* Navegación*/}
       <nav className="navegacion-principal">
         <div className="nav-contenedor">
           <h1 className="nav-logo">🎮 Game tracker</h1>

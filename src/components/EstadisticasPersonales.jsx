@@ -1,6 +1,7 @@
 import './EstadisticasPersonales.css'
 
 function EstadisticasPersonales({ juegos = [] }) {
+  // Calcular estadísticas
   const totalJuegos = juegos.length
   const totalResenas = juegos.reduce((sum, juego) => sum + (juego.comentariosIniciales?.length || 0), 0)
   const totalHoras = juegos.reduce((sum, juego) => sum + (juego.tiempoJugado || 0), 0)
@@ -8,14 +9,17 @@ function EstadisticasPersonales({ juegos = [] }) {
     ? (juegos.reduce((sum, juego) => sum + (juego.resena || 0), 0) / totalJuegos).toFixed(1)
     : 0
 
+  // Top 3 juegos por puntuación
   const top3Juegos = [...juegos]
     .sort((a, b) => (b.resena || 0) - (a.resena || 0))
     .slice(0, 3)
 
+  // Top 3 juegos más jugados
   const top3MasJugados = [...juegos]
     .sort((a, b) => (b.tiempoJugado || 0) - (a.tiempoJugado || 0))
     .slice(0, 3)
 
+  // Distribución de puntuaciones
   const distribucion = {
     '5 estrellas': juegos.filter(j => j.resena >= 4.5).length,
     '4 estrellas': juegos.filter(j => j.resena >= 3.5 && j.resena < 4.5).length,

@@ -128,7 +128,7 @@
 }
 
 /* Controles */
-.biblioteca-controles,
+.biblioteca-controles 
 .galeria-controles {
   display: flex;
   gap: 20px;
@@ -571,7 +571,7 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-contenedor {
     padding: 0 15px;
   }
