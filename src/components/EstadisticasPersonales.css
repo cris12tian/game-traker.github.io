@@ -1,0 +1,354 @@
+.estadisticas-personales {
+  padding: 40px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.stats-header {
+  color: white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.stats-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stats-header p {
+  margin: 8px 0 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Tarjetas de Estadísticas Principales */
+.stats-principales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icono {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.stat-contenido h3 {
+  margin: 0;
+  font-size: 2rem;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.stat-contenido p {
+  margin: 8px 0 0 0;
+  color: #718096;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Sección de Estadísticas */
+.stats-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section h3 {
+  margin: 0 0 25px 0;
+  color: #2d3748;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.sin-datos {
+  color: #718096;
+  text-align: center;
+  padding: 30px;
+  font-size: 1rem;
+}
+
+/* Distribución de Puntuaciones */
+.distribucion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.distribucion-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 50px;
+  gap: 15px;
+  align-items: center;
+}
+
+.distribucion-etiqueta {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.distribucion-barra {
+  height: 24px;
+  background: #edf2f7;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.distribucion-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.5s ease;
+  border-radius: 12px;
+}
+
+.distribucion-numero {
+  text-align: right;
+  color: #667eea;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Grid de Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Top Lista */
+.top-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.top-item {
+  display: grid;
+  grid-template-columns: 50px 80px 1fr;
+  gap: 15px;
+  align-items: center;
+  background: #f7fafc;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+}
+
+.top-item:hover {
+  background: #edf2f7;
+  transform: translateX(5px);
+}
+
+.top-posicion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #667eea;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 8px;
+}
+
+.top-imagen {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #cbd5e0;
+}
+
+.top-info h4 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.top-estrellas,
+.top-horas {
+  margin: 6px 0 0 0;
+  color: #fbd38d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.top-horas {
+  color: #48bb78;
+}
+
+.sin-juegos-stats {
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+}
+
+.sin-juegos-emoji {
+  font-size: 4rem;
+  margin: 0 0 20px 0;
+  display: block;
+}
+
+.sin-juegos-stats h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
+
+.sin-juegos-stats p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .estadisticas-personales {
+    padding: 20px 15px;
+  }
+
+  .stats-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .stats-principales {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .stat-icono {
+    font-size: 2rem;
+  }
+
+  .stat-contenido h3 {
+    font-size: 1.5rem;
+  }
+
+  .stats-section {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .top-item {
+    grid-template-columns: 40px 70px 1fr;
+  }
+
+  .top-imagen {
+    width: 70px;
+    height: 70px;
+  }
+
+  .top-posicion {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .estadisticas-personales {
+    padding: 15px 10px;
+  }
+
+  .stats-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .stats-header p {
+    font-size: 0.9rem;
+  }
+
+  .stats-principales {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 15px 10px;
+  }
+
+  .stat-icono {
+    font-size: 1.5rem;
+  }
+
+  .stat-contenido h3 {
+    font-size: 1.3rem;
+  }
+
+  .stat-contenido p {
+    font-size: 0.8rem;
+  }
+
+  .stats-section {
+    padding: 15px 10px;
+    margin-bottom: 15px;
+  }
+
+  .stats-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .distribucion-item {
+    grid-template-columns: 80px 1fr 40px;
+  }
+
+  .top-item {
+    grid-template-columns: 35px 60px 1fr;
+    padding: 10px;
+  }
+
+  .top-imagen {
+    width: 60px;
+    height: 60px;
+  }
+
+  .top-info h4 {
+    font-size: 0.9rem;
+  }
+
+  .sin-juegos-emoji {
+    font-size: 3rem;
+  }
+
+  .sin-juegos-stats h3 {
+    font-size: 1.2rem;
+  }
+
+  .sin-juegos-stats p {
+    font-size: 0.95rem;
+  }
+}

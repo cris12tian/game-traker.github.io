@@ -1,0 +1,729 @@
+.biblioteca-juegos {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+  margin: 0;
+}
+
+/* NAVEGACIÓN */
+.navegacion-principal {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+  backdrop-filter: blur(10px);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-contenedor {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.nav-logo {
+  margin: 0;
+  font-size: 1.8rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-boton {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 18px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  font-family: inherit;
+}
+
+.nav-boton:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-boton.activo {
+  color: white;
+  border-bottom-color: #48bb78;
+  background: rgba(72, 187, 120, 0.1);
+}
+
+/* SECCIÓN BIBLIOTECA */
+.seccion-biblioteca {
+  padding: 40px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.biblioteca-header {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.biblioteca-titulo {
+  flex: 1;
+  min-width: 250px;
+}
+
+.biblioteca-titulo h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contador-juegos {
+  margin: 8px 0 0 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.btn-agregar-juego {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-agregar-juego:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+.btn-agregar-juego:active {
+  transform: translateY(-1px);
+}
+
+/* Controles */
+.biblioteca-controles,
+.galeria-controles {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.grupo-busqueda {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.input-busqueda {
+  width: 95%;
+  padding: 10px 40px 12px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.input-busqueda:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.icono-busqueda {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.grupo-ordenar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.grupo-ordenar label {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.select-ordenar {
+  padding: 8px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.select-ordenar:hover,
+.select-ordenar:focus {
+  border-color: white;
+  outline: none;
+}
+
+/* TABLA DE BIBLIOTECA */
+.biblioteca-lista {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-juegos {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tabla-juegos thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.tabla-juegos th {
+  padding: 18px 20px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabla-juegos tbody tr {
+  border-bottom: 1px solid #edf2f7;
+  transition: background 0.3s ease;
+}
+
+.tabla-juegos tbody tr:hover {
+  background: #f7fafc;
+}
+
+.tabla-juegos tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tabla-juegos td {
+  padding: 18px 20px;
+}
+
+.celda-nombre {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.minatura-juego {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 2px solid #edf2f7;
+}
+
+.celda-estrellas {
+  color: #fbd38d;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.botones-tabla {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-tabla {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  border: 2px solid;
+}
+
+.btn-editar-tabla {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.btn-editar-tabla:hover {
+  background: #667eea;
+  color: white;
+}
+
+.btn-eliminar-tabla {
+  border-color: #fc8181;
+  color: #fc8181;
+}
+
+.btn-eliminar-tabla:hover {
+  background: #fc8181;
+  color: white;
+}
+
+.sin-juegos-biblioteca {
+  padding: 60px 20px;
+  text-align: center;
+  color: #718096;
+}
+
+.sin-juegos-biblioteca p {
+  font-size: 1.1rem;
+  margin: 0 0 20px 0;
+}
+
+.btn-agregar-primero {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-agregar-primero:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+/* SECCIÓN GALERÍA */
+.seccion-galeria {
+  padding: 40px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.galeria-header {
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.galeria-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.galeria-header p {
+  margin: 8px 0 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.galeria-contenido {
+  min-height: 300px;
+}
+
+.sin-juegos {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+}
+
+.sin-juegos-emoji {
+  font-size: 4rem;
+  margin: 0 0 20px 0;
+}
+
+.sin-juegos h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
+
+.sin-juegos p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  opacity: 0.9;
+}
+
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tarjeta-contenedor {
+  position: relative;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-contenido {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #edf2f7;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.btn-cerrar-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #718096;
+  transition: all 0.3s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cerrar-modal:hover {
+  color: #2d3748;
+  transform: scale(1.1);
+}
+
+/* FORMULARIO */
+.formulario-juego {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-form,
+.select-form {
+  padding: 12px;
+  border: 2px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.input-form:focus,
+.select-form:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.preview-imagen {
+  margin-top: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 200px;
+  background: #f7fafc;
+  padding: 10px;
+}
+
+.preview-imagen img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-cancelar,
+.btn-guardar {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar {
+  background: #cbd5e0;
+  color: #2d3748;
+}
+
+.btn-cancelar:hover {
+  background: #a0aec0;
+}
+
+.btn-guardar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-guardar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-contenedor {
+    padding: 0 15px;
+  }
+
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-boton {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+
+  .seccion-biblioteca,
+  .seccion-galeria {
+    padding: 20px 15px;
+  }
+
+  .biblioteca-header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .biblioteca-titulo h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-agregar-juego {
+    width: 100%;
+  }
+
+  .biblioteca-controles,
+  .galeria-controles {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .grupo-busqueda {
+    min-width: auto;
+  }
+
+  .galeria-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .tarjetas-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tabla-juegos {
+    font-size: 0.85rem;
+  }
+
+  .tabla-juegos th,
+  .tabla-juegos td {
+    padding: 12px 10px;
+  }
+
+  .minatura-juego {
+    width: 40px;
+    height: 40px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-contenido {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-contenedor {
+    padding: 0 10px;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-boton {
+    padding: 12px 15px;
+    font-size: 0.8rem;
+  }
+
+  .seccion-biblioteca,
+  .seccion-galeria {
+    padding: 15px 10px;
+  }
+
+  .biblioteca-header {
+    padding: 15px;
+  }
+
+  .biblioteca-titulo h2 {
+    font-size: 1.2rem;
+  }
+
+  .contador-juegos {
+    font-size: 0.8rem;
+  }
+
+  .galeria-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .tabla-juegos {
+    font-size: 0.75rem;
+  }
+
+  .tabla-juegos th,
+  .tabla-juegos td {
+    padding: 8px 5px;
+  }
+
+  .minatura-juego {
+    width: 35px;
+    height: 35px;
+  }
+
+  .celda-nombre {
+    gap: 8px;
+  }
+
+  .btn-tabla {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .sin-juegos-emoji {
+    font-size: 3rem;
+  }
+
+  .sin-juegos h3 {
+    font-size: 1.2rem;
+  }
+
+  .sin-juegos p {
+    font-size: 0.95rem;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-contenido {
+    padding: 15px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+}

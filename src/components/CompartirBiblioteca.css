@@ -1,0 +1,211 @@
+/* Botón Compartir */
+.btn-compartir {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+}
+
+.btn-compartir:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+/* Modal Compartir */
+.modal-overlay-compartir {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-compartir {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+.btn-cerrar-compartir {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #cbd5e0;
+  transition: color 0.2s ease;
+}
+
+.btn-cerrar-compartir:hover {
+  color: #2d3748;
+}
+
+.modal-compartir h2 {
+  margin-top: 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.modal-compartir p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin: 10px 0;
+}
+
+/* Contenedor URL */
+.contenedor-url-compartir {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  background: #f7fafc;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+}
+
+.input-url-compartir {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Courier New', monospace;
+  background: white;
+  color: #2d3748;
+}
+
+.btn-copiar-url {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-copiar-url:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-copiar-url.copiado {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+/* Info Compartir */
+.info-compartir {
+  background: #edf2f7;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-left: 4px solid #667eea;
+}
+
+.info-compartir p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+.info-compartir p:first-child {
+  margin-top: 0;
+}
+
+.info-compartir p:last-child {
+  margin-bottom: 0;
+}
+
+/* Botones */
+.btn-cerrar-modal-compartir {
+  width: 100%;
+  padding: 12px;
+  background: #e2e8f0;
+  color: #2d3748;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btn-cerrar-modal-compartir:hover {
+  background: #cbd5e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-compartir {
+    padding: 20px;
+  }
+
+  .modal-compartir h2 {
+    font-size: 1.2rem;
+  }
+
+  .contenedor-url-compartir {
+    flex-direction: column;
+  }
+
+  .btn-copiar-url {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-compartir {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .modal-compartir {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .input-url-compartir {
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
