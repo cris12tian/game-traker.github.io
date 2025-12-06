@@ -63,6 +63,14 @@ function BibliotecaJuegos() {
       tiempoJugado: 90,
       comentariosIniciales: []
     }
+    {
+      id: 7,
+      nombre: "FIFA 24",
+      imagen: "/imagenes/foto7.jpg",
+      resena: 4.7,
+      tiempoJugado: 300,
+      comentariosIniciales: []
+    }
   ])
 
   const [mostrarFormulario, setMostrarFormulario] = useState(false)
